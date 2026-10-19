@@ -2,7 +2,7 @@
 
 Personal portfolio of Ahmed Jenhani, software engineering student and full-stack developer, looking for a 4 to 6 month graduation internship (PFE) from 15 January 2027.
 
-**Live:** _add the Vercel link here after the first deployment_
+**Live:** https://ahmed-jenhani.vercel.app
 
 ## What is in it
 
