@@ -84,8 +84,8 @@ describe('internship search', () => {
   it('shows both locations', () => {
     for (const lang of ['en', 'fr'] as const) {
       expect(CONTENT[lang].hero.location).toContain('Nabeul');
-      expect(CONTENT[lang].hero.location).toContain('Tunis,');
-      expect(CONTENT[lang].contact.info.locationValue).toContain('Tunis,');
+      expect(CONTENT[lang].hero.location).toContain('Tunis, Tunisi');
+      expect(CONTENT[lang].contact.info.locationValue).toContain('Tunis, Tunisi');
     }
   });
 

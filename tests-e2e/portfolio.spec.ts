@@ -71,8 +71,8 @@ test.describe('content', () => {
 
   test('shows both locations and the phone number from the CV', async ({ page }) => {
     await open(page, 'en');
-    await expect(page.locator('#home')).toContainText('Nabeul, Tunisia · Tunis, Tunisia');
-    await expect(page.locator('#contact')).toContainText('Nabeul, Tunisia · Tunis, Tunisia');
+    await expect(page.locator('#home')).toContainText('Nabeul or Tunis, Tunisia');
+    await expect(page.locator('#contact')).toContainText('Nabeul or Tunis, Tunisia');
     await expect(page.getByTestId('phone-link')).toHaveAttribute('href', 'tel:+21650107126');
     await expect(page.getByTestId('phone-link')).toContainText('+216 50 107 126');
   });
