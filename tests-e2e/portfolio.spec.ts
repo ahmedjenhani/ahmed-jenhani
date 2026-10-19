@@ -58,6 +58,33 @@ test.describe('content', () => {
     }
   });
 
+  test('says it is looking for a 4 to 6 month PFE from 15 January 2027', async ({ page }) => {
+    await open(page, 'en');
+    await expect(page.getByTestId('status')).toContainText('graduation internship (PFE)');
+    await expect(page.getByTestId('pfe')).toContainText('4 to 6 months');
+    await expect(page.getByTestId('pfe').locator('time')).toHaveAttribute('datetime', '2027-01-15');
+    await page.getByTestId('lang-fr').click();
+    await expect(page.getByTestId('status')).toContainText("stage de projet de fin d'études (PFE)");
+    await expect(page.getByTestId('pfe')).toContainText('4 à 6 mois');
+    await expect(page.getByTestId('pfe')).toContainText('15 janvier 2027');
+  });
+
+  test('shows both locations and the phone number from the CV', async ({ page }) => {
+    await open(page, 'en');
+    await expect(page.locator('#home')).toContainText('Nabeul, Tunisia · Tunis, Tunisia');
+    await expect(page.locator('#contact')).toContainText('Nabeul, Tunisia · Tunis, Tunisia');
+    await expect(page.getByTestId('phone-link')).toHaveAttribute('href', 'tel:+21650107126');
+    await expect(page.getByTestId('phone-link')).toContainText('+216 50 107 126');
+  });
+
+  test('links the ITBS Network Security repository and has no "on request" text', async ({ page }) => {
+    await open(page, 'en');
+    await expect(page.getByTestId('code-phishing')).toHaveAttribute('href', 'https://github.com/ahmedjenhani/ITBSNetworksecurity2');
+    await expect(page.locator('#projects')).not.toContainText(/on request/i);
+    await page.getByTestId('lang-fr').click();
+    await expect(page.locator('#projects')).not.toContainText(/sur demande/i);
+  });
+
   test('lists every experience and certification', async ({ page }) => {
     await open(page);
     for (const id of ['dr_sina', 'main_form', 'elboita']) {

@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { sendMessage, validate, type ContactValues, type FieldErrors } from '../lib/contact';
 import { useI18n } from '../lib/i18n';
 import { SITE } from '../site';
-import { CheckIcon, CopyIcon, GithubIcon, LinkedinIcon, MailIcon, PinIcon } from './icons';
+import { CheckIcon, CopyIcon, GithubIcon, LinkedinIcon, MailIcon, PhoneIcon, PinIcon } from './icons';
 import { Card, Reveal, Section, cn } from './ui';
 
 type Status = 'idle' | 'sending' | 'mail-app' | 'online' | 'failed';
@@ -155,6 +155,15 @@ export function Contact() {
             </div>
             <CopyEmail />
           </div>
+          <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} className={row} data-testid="phone-link">
+            <span className={icon}>
+              <PhoneIcon />
+            </span>
+            <div>
+              <p className="text-xs text-muted">{c.info.phone}</p>
+              <p className="font-semibold">{SITE.phone}</p>
+            </div>
+          </a>
           <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className={row}>
             <span className={icon}>
               <LinkedinIcon />

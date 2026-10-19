@@ -2,6 +2,7 @@
 export const SITE = {
   name: 'Ahmed Jenhani',
   email: 'ahmed.jenhani2@gmail.com',
+  phone: '+216 50 107 126',
   github: 'https://github.com/ahmedjenhani',
   linkedin: 'https://www.linkedin.com/in/ahmed-jenhani-3a6424233/',
   cv: '/Ahmed-Jenhani-CV.pdf',
@@ -52,6 +53,7 @@ export const PROJECT_FACTS: ProjectFacts[] = [
   {
     id: 'phishing',
     tech: ['Python', 'FastAPI', 'MongoDB', 'MLflow', 'DagsHub', 'Docker', 'GitHub Actions', 'GCP'],
+    code: 'https://github.com/ahmedjenhani/ITBSNetworksecurity2',
   },
 ];
 

@@ -64,7 +64,32 @@ describe('site facts', () => {
     }
   });
 
-  it('does not publish a phone number', () => {
-    expect(JSON.stringify({ SITE, CONTENT })).not.toMatch(/\+?\d[\d\s.]{8,}\d/);
+  it('publishes the phone number from the CV', () => {
+    expect(SITE.phone).toBe('+216 50 107 126');
+  });
+
+  it('links the ITBS Network Security repository', () => {
+    expect(PROJECT_FACTS.find((p) => p.id === 'phishing')?.code).toBe('https://github.com/ahmedjenhani/ITBSNetworksecurity2');
+  });
+});
+
+describe('internship search', () => {
+  it('says it is a 4 to 6 month PFE available from 15 January 2027, in both languages', () => {
+    expect(CONTENT.en.hero.pfe).toMatchObject({ duration: '4 to 6 months', availability: '15 January 2027', availabilityDate: '2027-01-15' });
+    expect(CONTENT.fr.hero.pfe).toMatchObject({ duration: '4 à 6 mois', availability: '15 janvier 2027', availabilityDate: '2027-01-15' });
+    expect(CONTENT.fr.hero.status).toContain("stage de projet de fin d'études (PFE)");
+    expect(CONTENT.en.hero.status).toContain('(PFE)');
+  });
+
+  it('shows both locations', () => {
+    for (const lang of ['en', 'fr'] as const) {
+      expect(CONTENT[lang].hero.location).toContain('Nabeul');
+      expect(CONTENT[lang].hero.location).toContain('Tunis,');
+      expect(CONTENT[lang].contact.info.locationValue).toContain('Tunis,');
+    }
+  });
+
+  it('never says the source code is "available on request"', () => {
+    expect(strings(CONTENT).join('\n')).not.toMatch(/on request|sur demande/i);
   });
 });

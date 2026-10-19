@@ -27,6 +27,7 @@ export interface Content {
     role: string;
     tagline: string;
     status: string;
+    pfe: { type: string; durationLabel: string; duration: string; availabilityLabel: string; availability: string; availabilityDate: string };
     location: string;
     downloadCv: string;
     contact: string;
@@ -47,7 +48,7 @@ export interface Content {
     volunteering: { title: string; text: string };
   };
   skills: { title: string; subtitle: string; groups: Record<string, string>; practices: { title: string; items: string[] } };
-  projects: { title: string; subtitle: string; live: string; code: string; noLinks: string; featured: string; screenshotAlt: string; items: ProjectText[] };
+  projects: { title: string; subtitle: string; live: string; code: string; featured: string; screenshotAlt: string; items: ProjectText[] };
   experience: { title: string; subtitle: string; items: ExperienceText[] };
   contact: {
     title: string;
@@ -65,7 +66,7 @@ export interface Content {
       sentOnline: string;
       failed: string;
     };
-    info: { email: string; copy: string; copied: string; linkedin: string; github: string; location: string; locationValue: string };
+    info: { email: string; copy: string; copied: string; phone: string; linkedin: string; github: string; location: string; locationValue: string };
   };
   footer: { built: string; top: string };
 }
@@ -74,7 +75,7 @@ const en: Content = {
   meta: {
     title: 'Ahmed Jenhani | Full-Stack Developer',
     description:
-      'Portfolio of Ahmed Jenhani, a software engineering student and full-stack developer (React, Angular, Node.js, Spring Boot) looking for an internship.',
+      'Portfolio of Ahmed Jenhani, a software engineering student and full-stack developer (React, Angular, Node.js, Spring Boot) looking for a 4 to 6 month graduation internship (PFE) starting 15 January 2027.',
   },
   a11y: {
     skip: 'Skip to content',
@@ -88,9 +89,17 @@ const en: Content = {
     greeting: "Hi, I'm",
     role: 'Full-Stack Developer',
     tagline:
-      "Software engineering student building web applications end to end, from the database to the interface. I'm looking for an internship where I can learn from a team and ship real features.",
-    status: 'Open to internships',
-    location: 'Nabeul, Tunisia',
+      "Software engineering student building web applications end to end, from the database to the interface. I'm looking for a graduation internship where I can learn from a team and ship real features.",
+    status: 'Looking for a graduation internship (PFE)',
+    pfe: {
+      type: 'Graduation internship (PFE)',
+      durationLabel: 'Duration',
+      duration: '4 to 6 months',
+      availabilityLabel: 'Available from',
+      availability: '15 January 2027',
+      availabilityDate: '2027-01-15',
+    },
+    location: 'Nabeul, Tunisia · Tunis, Tunisia',
     downloadCv: 'Download my CV',
     contact: 'Get in touch',
     projects: 'See my projects',
@@ -103,7 +112,7 @@ const en: Content = {
     paragraphs: [
       "I'm a third-year software engineering student at ITBS in Tunisia. I like working across the whole stack: modelling the data, building the API, and making the interface pleasant to use. I've worked with Laravel, React, Angular, Express and Spring Boot, and I'm comfortable with both SQL and NoSQL databases.",
       'My experience comes from three internships (a pharmacy management system, a freelancer recruitment platform and an SEO internship) and from projects of my own: an e-commerce site, a phishing-detection MLOps pipeline, and two recent applications that I built, tested and deployed, Job Tracker and RetroLive.',
-      "I'm now looking for an internship in full-stack development, ideally in a team where I can learn from experienced engineers and contribute to a real product.",
+      "I'm now looking for my graduation internship (PFE), 4 to 6 months from 15 January 2027, in full-stack development, ideally in a team where I can learn from experienced engineers and contribute to a real product.",
     ],
     education: {
       title: 'Education',
@@ -149,7 +158,6 @@ const en: Content = {
     subtitle: 'Two applications I built and deployed, and other work from my studies and internships.',
     live: 'Live demo',
     code: 'Source code',
-    noLinks: 'Source code available on request',
     featured: 'Live on the web',
     screenshotAlt: 'Screenshot of',
     items: [
@@ -261,7 +269,7 @@ const en: Content = {
   contact: {
     title: 'Get in touch',
     intro:
-      "I'm looking for an internship in full-stack development. Write to me about an opportunity, a project, or just to say hello. I answer every message.",
+      "I'm looking for a graduation internship (PFE) in full-stack development, 4 to 6 months, available from 15 January 2027. Write to me about an opportunity, a project, or just to say hello. I answer every message.",
     form: {
       title: 'Send me a message',
       name: 'Your name',
@@ -269,7 +277,7 @@ const en: Content = {
       message: 'Your message',
       send: 'Send message',
       sending: 'Sending…',
-      subject: 'Internship opportunity',
+      subject: 'Graduation internship (PFE) opportunity',
       validation: { name: 'Please tell me your name.', email: 'Please enter a valid email address.', message: 'Please write a short message.' },
       sentMail: 'Your email app should open with the message ready to send. If nothing happens, write to me directly at the address on this page.',
       sentOnline: 'Thank you! Your message has been sent and I will reply soon.',
@@ -279,10 +287,11 @@ const en: Content = {
       email: 'Email',
       copy: 'Copy',
       copied: 'Copied!',
+      phone: 'Phone',
       linkedin: 'LinkedIn',
       github: 'GitHub',
       location: 'Location',
-      locationValue: 'Nabeul, Tunisia',
+      locationValue: 'Nabeul, Tunisia · Tunis, Tunisia',
     },
   },
   footer: { built: 'Designed and built by Ahmed Jenhani with React, TypeScript and Tailwind CSS.', top: 'Back to top' },
@@ -292,7 +301,7 @@ const fr: Content = {
   meta: {
     title: 'Ahmed Jenhani | Développeur Fullstack',
     description:
-      "Portfolio d'Ahmed Jenhani, élève ingénieur en génie logiciel et développeur fullstack (React, Angular, Node.js, Spring Boot), à la recherche d'un stage.",
+      "Portfolio d'Ahmed Jenhani, élève ingénieur en génie logiciel et développeur fullstack (React, Angular, Node.js, Spring Boot), à la recherche d'un stage de projet de fin d'études (PFE) de 4 à 6 mois à partir du 15 janvier 2027.",
   },
   a11y: {
     skip: 'Aller au contenu',
@@ -306,9 +315,17 @@ const fr: Content = {
     greeting: 'Bonjour, je suis',
     role: 'Développeur Fullstack',
     tagline:
-      "Élève ingénieur en génie logiciel, je conçois des applications web de bout en bout, de la base de données à l'interface. Je cherche un stage pour apprendre au sein d'une équipe et livrer de vraies fonctionnalités.",
-    status: "Disponible pour un stage",
-    location: 'Nabeul, Tunisie',
+      "Élève ingénieur en génie logiciel, je conçois des applications web de bout en bout, de la base de données à l'interface. Je cherche un stage de fin d'études pour apprendre au sein d'une équipe et livrer de vraies fonctionnalités.",
+    status: "À la recherche d'un stage de projet de fin d'études (PFE)",
+    pfe: {
+      type: "Stage de projet de fin d'études (PFE)",
+      durationLabel: 'Durée',
+      duration: '4 à 6 mois',
+      availabilityLabel: 'Disponible à partir du',
+      availability: '15 janvier 2027',
+      availabilityDate: '2027-01-15',
+    },
+    location: 'Nabeul, Tunisie · Tunis, Tunisie',
     downloadCv: 'Télécharger mon CV',
     contact: 'Me contacter',
     projects: 'Voir mes projets',
@@ -321,7 +338,7 @@ const fr: Content = {
     paragraphs: [
       "Je suis élève ingénieur en génie logiciel en troisième année à l'ITBS, en Tunisie. J'aime travailler sur toute la chaîne : modéliser les données, construire l'API et rendre l'interface agréable à utiliser. J'ai travaillé avec Laravel, React, Angular, Express et Spring Boot, et je suis à l'aise avec les bases de données SQL et NoSQL.",
       "Mon expérience vient de trois stages (un système de gestion de pharmacie, une plateforme de recrutement de freelances et un stage SEO) et de projets personnels : un site e-commerce, un pipeline MLOps de détection de phishing, et deux applications récentes que j'ai développées, testées et déployées, Job Tracker et RetroLive.",
-      "Je cherche maintenant un stage en développement fullstack, de préférence dans une équipe où je peux apprendre auprès d'ingénieurs expérimentés et contribuer à un vrai produit.",
+      "Je cherche maintenant mon stage de projet de fin d'études (PFE), de 4 à 6 mois à partir du 15 janvier 2027, en développement fullstack, de préférence dans une équipe où je peux apprendre auprès d'ingénieurs expérimentés et contribuer à un vrai produit.",
     ],
     education: {
       title: 'Formation',
@@ -367,7 +384,6 @@ const fr: Content = {
     subtitle: 'Deux applications que j\'ai développées et déployées, et d\'autres réalisations de mes études et stages.',
     live: 'Voir la démo',
     code: 'Code source',
-    noLinks: 'Code source disponible sur demande',
     featured: 'En ligne',
     screenshotAlt: "Capture d'écran de",
     items: [
@@ -479,7 +495,7 @@ const fr: Content = {
   contact: {
     title: 'Me contacter',
     intro:
-      "Je cherche un stage en développement fullstack. Écrivez-moi pour une opportunité, un projet, ou simplement pour dire bonjour. Je réponds à tous les messages.",
+      "Je cherche un stage de projet de fin d'études (PFE) en développement fullstack, de 4 à 6 mois, disponible à partir du 15 janvier 2027. Écrivez-moi pour une opportunité, un projet, ou simplement pour dire bonjour. Je réponds à tous les messages.",
     form: {
       title: 'Envoyez-moi un message',
       name: 'Votre nom',
@@ -487,7 +503,7 @@ const fr: Content = {
       message: 'Votre message',
       send: 'Envoyer le message',
       sending: 'Envoi…',
-      subject: 'Opportunité de stage',
+      subject: 'Opportunité de stage PFE',
       validation: { name: 'Merci de me dire votre nom.', email: 'Merci de saisir une adresse email valide.', message: 'Merci d\'écrire un court message.' },
       sentMail: "Votre application email devrait s'ouvrir avec le message prêt à envoyer. Sinon, écrivez-moi directement à l'adresse indiquée sur cette page.",
       sentOnline: 'Merci ! Votre message a bien été envoyé et je vous répondrai bientôt.',
@@ -497,10 +513,11 @@ const fr: Content = {
       email: 'Email',
       copy: 'Copier',
       copied: 'Copié !',
+      phone: 'Téléphone',
       linkedin: 'LinkedIn',
       github: 'GitHub',
       location: 'Localisation',
-      locationValue: 'Nabeul, Tunisie',
+      locationValue: 'Nabeul, Tunisie · Tunis, Tunisie',
     },
   },
   footer: { built: "Conçu et développé par Ahmed Jenhani avec React, TypeScript et Tailwind CSS.", top: 'Retour en haut' },

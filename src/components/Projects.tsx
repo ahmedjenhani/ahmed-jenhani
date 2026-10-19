@@ -7,7 +7,7 @@ import { ButtonLink, Card, Chip, Reveal, Section, cn } from './ui';
 function Links({ facts, name }: { facts: ProjectFacts; name: string }) {
   const { t } = useI18n();
   if (!facts.live && !facts.code) {
-    return <p className="text-sm text-muted">{t.projects.noLinks}</p>;
+    return null;
   }
   return (
     <div className="flex flex-wrap gap-3">
@@ -114,9 +114,11 @@ function CompactProject({ text, facts, index }: { text: ProjectText; facts: Proj
           <p className="mt-2 text-sm leading-relaxed text-muted">{text.description}</p>
           <Highlights items={text.highlights} />
           <TechChips tech={facts.tech} />
-          <div className="mt-auto pt-6">
-            <Links facts={facts} name={text.title} />
-          </div>
+          {(facts.live || facts.code) && (
+            <div className="mt-auto pt-6">
+              <Links facts={facts} name={text.title} />
+            </div>
+          )}
         </article>
       </Card>
     </Reveal>
