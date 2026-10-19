@@ -87,7 +87,7 @@ const en: Content = {
   nav: { home: 'Home', about: 'About', skills: 'Skills', projects: 'Projects', experience: 'Experience', contact: 'Contact' },
   hero: {
     greeting: "Hi, I'm",
-    role: 'Full-Stack Developer',
+    role: 'Engineering Student · Full-Stack Developer',
     tagline:
       "Software engineering student building web applications end to end, from the database to the interface. I'm looking for a graduation internship where I can learn from a team and ship real features.",
     status: 'Looking for a graduation internship (PFE)',
@@ -313,7 +313,7 @@ const fr: Content = {
   nav: { home: 'Accueil', about: 'À propos', skills: 'Compétences', projects: 'Projets', experience: 'Expérience', contact: 'Contact' },
   hero: {
     greeting: 'Bonjour, je suis',
-    role: 'Développeur Fullstack',
+    role: 'Élève ingénieur · Développeur Fullstack',
     tagline:
       "Élève ingénieur en génie logiciel, je conçois des applications web de bout en bout, de la base de données à l'interface. Je cherche un stage de fin d'études pour apprendre au sein d'une équipe et livrer de vraies fonctionnalités.",
     status: "À la recherche d'un stage de projet de fin d'études (PFE)",

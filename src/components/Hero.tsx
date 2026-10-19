@@ -16,13 +16,27 @@ export function Hero() {
     <section id="home" aria-labelledby="home-title" className="relative flex min-h-screen items-center pt-24 pb-16">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
-          <p className="inline-flex items-center gap-2.5 rounded-2xl border border-line bg-surface px-3.5 py-1.5 text-sm font-medium" data-testid="status">
-            <span className="relative flex h-2.5 w-2.5 shrink-0">
-              <span className="ping-soft absolute inline-flex h-full w-full rounded-full bg-emerald-500" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-            </span>
-            {h.status}
-          </p>
+          <div className="inline-block max-w-full rounded-2xl border border-accent/40 bg-accent/5 px-5 py-4" data-testid="pfe-card">
+            <p className="flex items-center gap-3 text-base font-bold sm:text-lg" data-testid="status">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="ping-soft absolute inline-flex h-full w-full rounded-full bg-emerald-500" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+              </span>
+              {h.status}
+            </p>
+            <dl className="mt-3 flex flex-wrap gap-x-10 gap-y-3 border-t border-accent/20 pt-3" aria-label={h.pfe.type} data-testid="pfe">
+              <div>
+                <dt className="font-mono text-xs text-muted">{h.pfe.durationLabel}</dt>
+                <dd className="text-lg font-bold">{h.pfe.duration}</dd>
+              </div>
+              <div>
+                <dt className="font-mono text-xs text-muted">{h.pfe.availabilityLabel}</dt>
+                <dd className="text-lg font-bold">
+                  <time dateTime={h.pfe.availabilityDate}>{h.pfe.availability}</time>
+                </dd>
+              </div>
+            </dl>
+          </div>
 
           <p className="mt-8 font-mono text-base text-muted">{h.greeting}</p>
           <h1 id="home-title" className="mt-1 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
@@ -30,23 +44,6 @@ export function Hero() {
           </h1>
           <p className="mt-3 text-2xl font-semibold text-ink sm:text-3xl">{h.role}</p>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">{h.tagline}</p>
-
-          <dl
-            className="mt-6 flex max-w-full flex-wrap gap-x-10 gap-y-3 rounded-2xl border border-accent/40 bg-accent/5 px-5 py-4 min-[460px]:inline-flex"
-            aria-label={h.pfe.type}
-            data-testid="pfe"
-          >
-            <div>
-              <dt className="font-mono text-xs text-muted">{h.pfe.durationLabel}</dt>
-              <dd className="text-lg font-bold">{h.pfe.duration}</dd>
-            </div>
-            <div>
-              <dt className="font-mono text-xs text-muted">{h.pfe.availabilityLabel}</dt>
-              <dd className="text-lg font-bold">
-                <time dateTime={h.pfe.availabilityDate}>{h.pfe.availability}</time>
-              </dd>
-            </div>
-          </dl>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href={SITE.cv} download="Ahmed-Jenhani-CV.pdf" data-testid="download-cv">
