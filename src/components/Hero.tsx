@@ -16,7 +16,13 @@ export function Hero() {
     <section id="home" aria-labelledby="home-title" className="relative flex min-h-screen items-center pt-24 pb-16">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
-          <div className="inline-block max-w-full rounded-2xl border border-accent/40 bg-accent/5 px-5 py-4" data-testid="pfe-card">
+          <p className="font-mono text-base text-muted">{h.greeting}</p>
+          <h1 id="home-title" className="mt-1 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+            <span className="gradient-text">{SITE.name}</span>
+          </h1>
+          <p className="mt-3 text-2xl font-semibold text-ink sm:text-3xl">{h.role}</p>
+
+          <div className="mt-6 inline-block max-w-full rounded-2xl border border-accent/40 bg-accent/5 px-5 py-4" data-testid="pfe-card">
             <p className="flex items-center gap-3 text-base font-bold sm:text-lg" data-testid="status">
               <span className="relative flex h-2.5 w-2.5 shrink-0">
                 <span className="ping-soft absolute inline-flex h-full w-full rounded-full bg-emerald-500" />
@@ -38,12 +44,7 @@ export function Hero() {
             </dl>
           </div>
 
-          <p className="mt-8 font-mono text-base text-muted">{h.greeting}</p>
-          <h1 id="home-title" className="mt-1 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
-            <span className="gradient-text">{SITE.name}</span>
-          </h1>
-          <p className="mt-3 text-2xl font-semibold text-ink sm:text-3xl">{h.role}</p>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">{h.tagline}</p>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{h.tagline}</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href={SITE.cv} download="Ahmed-Jenhani-CV.pdf" data-testid="download-cv">
