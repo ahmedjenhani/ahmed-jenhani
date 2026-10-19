@@ -1,4 +1,5 @@
 import { About } from './components/About';
+import { Assistant } from './components/Assistant';
 import { Contact } from './components/Contact';
 import { Experience } from './components/Experience';
 import { Footer } from './components/Footer';
@@ -30,6 +31,7 @@ export function App() {
         <Contact />
       </main>
       <Footer />
+      <Assistant />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { FORMSPREE_ID } from '../config';
 import { sendMessage, validate, type ContactValues, type FieldErrors } from '../lib/contact';
 import { useI18n } from '../lib/i18n';
 import { SITE } from '../site';
@@ -31,7 +32,7 @@ function ContactForm() {
     setStatus('sending');
     try {
       setStatus(await sendMessage(values, f.subject));
-      if (SITE.formspreeId) {
+      if (FORMSPREE_ID) {
         setValues({ name: '', email: '', message: '' });
       }
     } catch {

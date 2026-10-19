@@ -68,6 +68,22 @@ export interface Content {
     };
     info: { email: string; copy: string; copied: string; phone: string; linkedin: string; github: string; location: string; locationValue: string };
   };
+  assistant: {
+    launcher: string;
+    title: string;
+    subtitle: string;
+    greeting: string;
+    note: string;
+    placeholder: string;
+    inputLabel: string;
+    send: string;
+    thinking: string;
+    clear: string;
+    close: string;
+    emailCta: string;
+    suggestions: string[];
+    errors: { rateLimited: string; busy: string; unavailable: string };
+  };
   footer: { built: string; top: string };
 }
 
@@ -294,6 +310,32 @@ const en: Content = {
       locationValue: 'Nabeul or Tunis, Tunisia',
     },
   },
+  assistant: {
+    launcher: 'Ask AI about Ahmed',
+    title: 'Ask about Ahmed',
+    subtitle: 'AI assistant, answering from his CV and this portfolio',
+    greeting:
+      "Hi! I'm an AI assistant. Ask me about Ahmed's skills, projects, internships or availability, and I'll answer from his CV and this portfolio.",
+    note: 'AI can make mistakes. For anything important, contact Ahmed directly.',
+    placeholder: 'Ask a question…',
+    inputLabel: 'Your question',
+    send: 'Send',
+    thinking: 'Thinking…',
+    clear: 'New conversation',
+    close: 'Close the assistant',
+    emailCta: 'Email Ahmed',
+    suggestions: [
+      'What kind of internship is Ahmed looking for?',
+      'Which projects has he built and deployed?',
+      'What technologies does he use?',
+      'What did he do during his internships?',
+    ],
+    errors: {
+      rateLimited: 'You are asking quite fast. Please wait a moment and try again.',
+      busy: 'The free AI quota is used up for now. Please try again later, or write to Ahmed directly.',
+      unavailable: 'The assistant is not available right now. Please write to Ahmed directly.',
+    },
+  },
   footer: { built: 'Designed and built by Ahmed Jenhani with React, TypeScript and Tailwind CSS.', top: 'Back to top' },
 };
 
@@ -518,6 +560,32 @@ const fr: Content = {
       github: 'GitHub',
       location: 'Localisation',
       locationValue: 'Nabeul ou Tunis, Tunisie',
+    },
+  },
+  assistant: {
+    launcher: "Poser une question à l'IA",
+    title: 'Poser une question sur Ahmed',
+    subtitle: 'Assistant IA, qui répond à partir de son CV et de ce portfolio',
+    greeting:
+      "Bonjour ! Je suis un assistant IA. Posez-moi vos questions sur les compétences, les projets, les stages ou la disponibilité d'Ahmed : je réponds à partir de son CV et de ce portfolio.",
+    note: "L'IA peut se tromper. Pour toute information importante, contactez directement Ahmed.",
+    placeholder: 'Posez une question…',
+    inputLabel: 'Votre question',
+    send: 'Envoyer',
+    thinking: 'Réflexion…',
+    clear: 'Nouvelle conversation',
+    close: "Fermer l'assistant",
+    emailCta: 'Écrire à Ahmed',
+    suggestions: [
+      'Quel type de stage Ahmed recherche-t-il ?',
+      'Quels projets a-t-il développés et déployés ?',
+      'Quelles technologies utilise-t-il ?',
+      "Qu'a-t-il fait pendant ses stages ?",
+    ],
+    errors: {
+      rateLimited: "Vous posez beaucoup de questions d'un coup. Patientez un instant puis réessayez.",
+      busy: "Le quota gratuit de l'IA est épuisé pour le moment. Réessayez plus tard ou écrivez directement à Ahmed.",
+      unavailable: "L'assistant n'est pas disponible pour le moment. Écrivez directement à Ahmed.",
     },
   },
   footer: { built: "Conçu et développé par Ahmed Jenhani avec React, TypeScript et Tailwind CSS.", top: 'Retour en haut' },

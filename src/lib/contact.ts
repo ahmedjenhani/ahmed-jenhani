@@ -1,3 +1,4 @@
+import { FORMSPREE_ID } from '../config';
 import { SITE } from '../site';
 
 export interface ContactValues {
@@ -39,7 +40,7 @@ export interface SendDeps {
 }
 
 const defaultDeps = (): SendDeps => ({
-  formspreeId: SITE.formspreeId,
+  formspreeId: FORMSPREE_ID,
   fetchImpl: (...args) => fetch(...args),
   openMailApp: (url) => {
     window.location.href = url;

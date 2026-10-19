@@ -7,8 +7,6 @@ export const SITE = {
   linkedin: 'https://www.linkedin.com/in/ahmed-jenhani-3a6424233/',
   cv: '/Ahmed-Jenhani-CV.pdf',
   photo: '/ahmed.jpg',
-  // Optional: create a free form at https://formspree.io and set VITE_FORMSPREE_ID to send messages without an email app.
-  formspreeId: (import.meta.env['VITE_FORMSPREE_ID'] as string | undefined) ?? '',
 } as const;
 
 export const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'experience', 'contact'] as const;
